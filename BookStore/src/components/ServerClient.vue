@@ -31,8 +31,8 @@
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
           <a href="javascript:;">
-            <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-            贤心
+            <img :src="headphoto" class="layui-nav-img">
+            <span>{{username}}</span>
           </a>
           <dl class="layui-nav-child">
             <dd>
@@ -44,7 +44,7 @@
           </dl>
         </li>
         <li class="layui-nav-item">
-          <a href>退了</a>
+          <a href>退出</a>
         </li>
       </ul>
     </div>
@@ -90,7 +90,9 @@ export default {
   name: "ServerClient",
   data:function(){
       return {
-          BookClassArr:["童书","小说","文学","励志","养生","动漫","时尚","科普"]
+          BookClassArr:["童书","小说","文学","励志","养生","动漫","时尚","科普"],
+          headphoto:"",
+          username:'reyted'
       }
   },
   mounted: function() {

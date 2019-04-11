@@ -1,9 +1,11 @@
 <template>
-  <div class="box">
-      <div class="name" :style="mystyleTop">{{className}}</div>
-      <div class="num" :style="mystyleBom">{{num}}</div>
-      <div class="unit" :style="mystyleBom">单位(册)</div>
-  </div>
+  <router-link to="/details">
+  	<div class="box">
+	      <div class="name" :style="mystyleTop">{{className}}</div>
+	      <div class="num" :style="mystyleBom">{{num}}</div>
+	      <div class="unit" :style="mystyleBom">单位(册)</div>
+	  </div>
+  </router-link>
 </template>
 <script>
 
@@ -16,8 +18,12 @@ export default {
     num:Number,
     mystyleTop:Object,
     mystyleBom:Object,
+  },
+  methods:{
+  	enter:function(){
+  		
+  	}
   }
-  
 };
 </script>
 <style scoped>

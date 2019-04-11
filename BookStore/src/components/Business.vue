@@ -45,7 +45,7 @@ export default {
        * 发送ajax获取
        */
 
-
+			
 
 
     /**
@@ -90,7 +90,7 @@ export default {
       moneyArray: [
         {
           title: "今日营业额",
-          money: 1024,
+          money: 100,
           unit:"￥",
           background: {
             background: "#4DA0FE"

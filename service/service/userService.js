@@ -42,6 +42,27 @@ function insertBook(data,cb){
 	})
 }
 
+function selectAll(cb){
+	userdb.selectAll(function(res){
+		cb(res);
+	})
+}
+
+function selectKeywords(data,cb){
+	userdb.selectKeywords(data,function(res){
+		cb(res);
+	})
+}
+
+function insertShopping(data,cb){
+	userdb.insertShopping(data,function(res){
+		cb(res);
+	})
+}
+
+exports.insertShopping=insertShopping;
+exports.selectAll=selectAll;
+exports.selectKeywords=selectKeywords;
 exports.login=login;
 exports.reg=reg;
 exports.vertifyUsername=vertifyUsername;

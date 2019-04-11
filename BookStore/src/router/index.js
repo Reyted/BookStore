@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import AddGoods from '@/components/AddGoods'
 import CheckInventory from '@/components/CheckInventory'
 import Business from '@/components/Business'
+import ServerClient from '@/components/ServerClient'
 
 Vue.use(Router)
 
@@ -25,6 +26,11 @@ export default new Router({
       path: '/Business',
       name: 'Business',
       component: Business
+    },
+    {
+    	path:'/ServerClient',
+    	name:'ServerClient',
+    	component:ServerClient
     }
   ]
 })

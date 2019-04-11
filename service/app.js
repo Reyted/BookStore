@@ -24,10 +24,10 @@ app.post("/form",(req,res)=>{
 	res.send("log");
 })
 
-app.post('/log.do',(req,res)=>{
+app.get('/log',(req,res)=>{
     res.setHeader('Access-Control-Allow-Origin','*');
-    let username=req.body.username;
-    let pwd=req.body.pwd;
+    let username=req.query.username;
+    let pwd=req.query.pwd;
     userService.login(username,pwd,function(results){
         if(results){
             res.json(results);
@@ -57,12 +57,34 @@ app.post('/reg.do',(req,res)=>{
 
 app.post('/insert',(req,res)=>{
 	res.setHeader('Access-Control-Allow-Origin','http://localhost:8080');
-    console.log(req.body);
     let data=req.body;
     userService.insertBook(data,function(result){
-    	console.log(result);
     	res.json(result);
     })
+})
+
+app.get('/allproducts',(req,res)=>{
+	res.setHeader('Access-Control-Allow-Origin','*');
+	userService.selectAll(function(result){
+		res.json(result);
+	})
+})
+
+app.get("/searchProducts",(req,res)=>{
+	res.setHeader('Access-Control-Allow-Origin','*');
+	let data=req.query.keywords;
+	userService.selectKeywords(data,function(result){
+		res.json(result);
+	})
+})
+
+app.get("/insertShopping",(req,res)=>{
+	res.setHeader('Access-Control-Allow-Origin','*');
+	let data=req.query;
+	userService.insertShopping(data,function(result){
+		res.json(result);
+	})
+	console.log(data);
 })
 
 app.listen(7778,()=>{
